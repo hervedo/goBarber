@@ -3,6 +3,8 @@ backend/.vscode/
 backend/node_modules
 backend/build
 backend/tmp
+backend/yarn-error.log*
+backend/yarn.lock*
 
 web/node_modules
 web//.pnp
