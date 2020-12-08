@@ -6,7 +6,6 @@ import AppError from '../errors/AppError';
 import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
-
 interface Request {
   provider_id: string;
   date: Date;
