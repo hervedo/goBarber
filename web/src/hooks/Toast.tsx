@@ -4,7 +4,7 @@ import ToastContainer from '../components/ToastContainer';
 
 interface ToastContextData {
   addToast(message: Omit<ToastMessage, 'id'>): void;
-  removeToast(): void;
+  removeToast(id: string): void;
 }
 
 export interface ToastMessage {
@@ -34,8 +34,9 @@ export const ToastProvider: React.FC = ({ children }) => {
     },
     [],
   );
-  const removeToast = useCallback(() => {
-    console.log('b');
+
+  const removeToast = useCallback((id: string) => {
+    setMessages(state => state.filter(message => message.id !== id));
   }, []);
   return (
     <ToastContainer.Provider value={{ addToast, removeToast }}>
